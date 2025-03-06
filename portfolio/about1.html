@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(45deg, #0a0a0a, #1a1a1a);
+            color: #fff;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        .hero {
+            height: 250px;
+            background: linear-gradient(90deg, #4433ff, #00ffbb);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to top, #0a0a0a, transparent);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: -150px auto 50px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .profile-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid #4433ff;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            display: block;
+        }
+        
+        .two-column-layout {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .left-column {
+            flex: 1;
+        }
+        
+        .right-column {
+            flex: 1;
+        }
+        
+        .about-content {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            height: 100%;
+        }
+        
+        .section-title {
+            font-size: 2em;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #4433ff, #00ffbb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .description {
+            font-size: 1.2em;
+            color: #bbb;
+            line-height: 1.8;
+        }
+        
+        .info-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .info-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .info-card h2 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #00ffbb;
+            display: flex;
+            align-items: center;
+        }
+        
+        .info-card i {
+            font-size: 1.5em;
+            margin-right: 10px;
+            background: linear-gradient(90deg, #4433ff, #00ffbb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        @media (max-width: 768px) {
+            .two-column-layout {
+                flex-direction: column;
+            }
+            
+            .profile-img {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .about-content {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero"></div>
+    <div class="container">
+        <div class="profile-header">
+            <img src="moni.jpg" alt="Your Image" class="profile-img">
+        </div>
+        
+        <div class="two-column-layout">
+            <div class="left-column">
+                <div class="about-content">
+                    <h1 class="section-title">About Me</h1>
+                    <p class="description">
+                        Hello! I'm Monisha, a passionate Computer Science Engineering student at KPR Institute of Engineering and Technology. 
+                        <br><br>
+                        I love full-stack development, Java programming, and problem-solving. 
+                        <br><br>
+                        With a strong foundation in web development and SQL, I enjoy building creative and efficient solutions.
+                        <br><br>
+                        In my free time, I engage in sports, spend time with pets, and embrace nature.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="right-column">
+                <div class="info-section">
+                    <div class="info-card">
+                        <h2><i class="fas fa-map-marker-alt"></i> Location</h2>
+                        <p>Coimbatore, Tamil Nadu, India</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h2><i class="fas fa-heart"></i> Interests</h2>
+                        <p>Full-Stack Development, Problem Solving, Sports</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h2><i class="fas fa-language"></i> Languages</h2>
+                        <p>English, Tamil</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                        <p>B.Tech in Computer Science Engineering</p>
+                        <p>KPR Institute of Engineering and Technology</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

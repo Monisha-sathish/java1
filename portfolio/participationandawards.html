@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+      * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #fff;
+            background: #0a0a0a;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(45deg, 
+                #000000, 
+                #001f3f,
+                #003366,
+                #001f3f,
+                #000000);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            position: relative;
+            padding: 2rem;
+        }
+
+        .section {
+            min-height: 100vh;
+            background: linear-gradient(45deg, #0a0a0a, #1a1a1a);
+            position: relative;
+            padding: 100px 0;
+        }
+
+        .hero-header {
+            height: 250px;
+            background: linear-gradient(90deg, #4433ff, #00ffbb);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to top, #0a0a0a, transparent);
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #fff, #4433ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .title {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: #4433ff;
+            animation: fadeIn 1s ease-out 0.2s backwards;
+        }
+
+        .description {
+            max-width: 700px;
+            margin: 2rem auto;
+            font-size: 1.2rem;
+            color: #99c2ff;
+            animation: fadeIn 1s ease-out 0.4s backwards;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 3rem;
+            animation: fadeIn 1s ease-out 0.6s backwards;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+            font-size: 1.1rem;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            background: rgba(68, 51, 255, 0.1);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(68, 51, 255, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-link:hover {
+            background: rgba(68, 51, 255, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(68, 51, 255, 0.1);
+            border: 1px solid rgba(68, 51, 255, 0.4);
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto 50px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 30px;
+        }
+
+        .section-header {
+            grid-column: span 12;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #4433ff, #00ffbb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-subtitle {
+            font-size: 1.2em;
+            color: #99c2ff;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        
+        /* Participations Section Styles */
+        .participations-grid {
+            grid-column: span 12;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .participation-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .participation-card:hover {
+            transform: translateY(-10px);
+            border-color: #4433ff;
+            background: rgba(68, 51, 255, 0.1);
+        }
+
+        .participation-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #4433ff, #00ffbb);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        .participation-title {
+            font-size: 1.4em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .participation-description {
+            color: #c9c9c9;
+            margin-bottom: 20px;
+            font-size: 1.05em;
+        }
+
+        .participation-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #888;
+            font-size: 0.9em;
+            margin-top: 20px;
+        }
+
+        /* Awards Section Styles */
+        .awards-timeline {
+            grid-column: span 12;
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline-line {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background: linear-gradient(to bottom, #4433ff, #00ffbb);
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .award-item {
+            position: relative;
+            margin-bottom: 50px;
+            width: 45%;
+        }
+
+        .award-item:nth-child(even) {
+            margin-left: auto;
+        }
+
+        .award-item::after {
+            content: '';
+            position: absolute;
+            top: 30px;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(45deg, #4433ff, #00ffbb);
+            border-radius: 50%;
+        }
+
+        .award-item:nth-child(odd)::after {
+            right: -59px;
+        }
+
+        .award-item:nth-child(even)::after {
+            left: -59px;
+        }
+
+        .award-content {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .award-content:hover {
+            background: rgba(68, 51, 255, 0.1);
+            border-color: #4433ff;
+            transform: translateY(-5px);
+        }
+
+        .award-year {
+            display: inline-block;
+            padding: 8px 15px;
+            background: linear-gradient(45deg, #4433ff, #00ffbb);
+            border-radius: 30px;
+            color: #fff;
+            font-weight: 500;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+        }
+
+        .award-title {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .award-issuer {
+            color: #888;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+
+        .award-description {
+            color: #c9c9c9;
+            font-size: 1em;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 992px) {
+            .about-image,
+            .about-text {
+                grid-column: span 12;
+            }
+            
+            .about-image {
+                height: 300px;
+            }
+            
+            .award-item {
+                width: 100%;
+                margin-left: 60px !important;
+            }
+            
+            .timeline-line {
+                left: 20px;
+            }
+            
+            .award-item::after {
+                left: -50px !important;
+            }
+            
+            h1 {
+                font-size: 3rem;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-link {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+    </style>
+    </head>
+<body><!-- Participations Section -->
+<section id="participations" class="section">
+    <div class="section-container">
+        <div class="section-header">
+            <h2 class="section-title">Participations</h2>
+            <p class="section-subtitle">Key events, hackathons, and community initiatives I've been a part of.</p>
+        </div>
+        <div class="section-grid">
+            <div class="participations-grid">
+                <div class="participation-card">
+                    <div class="participation-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="participation-title">Smart India Hackathon</h3>
+                    <p class="participation-description">Participated in a 36-hour nationwide hackathon, developing an AI-based solution for educational resource distribution.</p>
+                    <div class="participation-meta">
+                        <span><i class="fas fa-calendar"></i> March 2023</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Delhi</span>
+                    </div>
+                </div>
+                
+                <div class="participation-card">
+                    <div class="participation-icon">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <h3 class="participation-title">Codathon - Technical Symposium</h3>
+                    <p class="participation-description">Competed in a coding marathon focused on algorithm optimization and problem-solving within tight time constraints.</p>
+                    <div class="participation-meta">
+                        <span><i class="fas fa-calendar"></i> September 2022</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Chennai</span>
+                    </div>
+                </div>
+                
+                <div class="participation-card">
+                    <div class="participation-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3 class="participation-title">AWS Deep Racer Workshop</h3>
+                    <p class="participation-description">Attended an immersive workshop on reinforcement learning using AWS DeepRacer, building and training autonomous racing models.</p>
+                    <div class="participation-meta">
+                        <span><i class="fas fa-calendar"></i> November 2023</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Bangalore</span>
+                    </div>
+                </div>
+                
+                <div class="participation-card">
+                    <div class="participation-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="participation-title">Google Developer Groups</h3>
+                    <p class="participation-description">Active member of Google Developer Groups, participating in monthly meetups and knowledge-sharing sessions on web technologies.</p>
+                    <div class="participation-meta">
+                        <span><i class="fas fa-calendar"></i> 2022 - Present</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Chennai</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Awards Section -->
+<section id="awards" class="section">
+    <div class="section-container">
+        <div class="section-header">
+            <h2 class="section-title">Awards & Achievements</h2>
+            <p class="section-subtitle">Recognition for excellence in programming, academics, and other pursuits.</p>
+        </div>
+        <div class="section-grid">
+            <div class="awards-timeline">
+                <div class="timeline-line"></div>
+                
+                <div class="award-item">
+                    <div class="award-content">
+                        <div class="award-year">2023</div>
+                        <h3 class="award-title">Best Innovative Project</h3>
+                        <div class="award-issuer">College Technical Symposium</div>
+                        <p class="award-description">Recognized for developing an AI-powered assistive technology solution that helps visually impaired individuals navigate indoor environments.</p>
+                    </div>
+                </div>
+                
+                <div class="award-item">
+                    <div class="award-content">
+                        <div class="award-year">2022</div>
+                        <h3 class="award-title">Runner-Up, Code Jam</h3>
+                        <div class="award-issuer">Regional Coding Competition</div>
+                        <p class="award-description">Secured second place in a competitive programming contest featuring complex algorithmic challenges and optimization problems.</p>
+                    </div>
+                </div>
+                
+                <div class="award-item">
+                    <div class="award-content">
+                        <div class="award-year">2022</div>
+                        <h3 class="award-title">Academic Excellence Award</h3>
+                        <div class="award-issuer">University Department of Computer Science</div>
+                        <p class="award-description">Awarded for maintaining a perfect GPA throughout the academic year and contributing to department research initiatives.</p>
+                    </div>
+                </div>
+                
+                <div class="award-item">
+                    <div class="award-content">
+                        <div class="award-year">2021</div>
+                        <h3 class="award-title">Outstanding Sports Achievement</h3>
+                        <div class="award-issuer">State Swimming Championship</div>
+                        <p class="award-description">Gold medal in 100m freestyle at the state-level swimming championship, representing the university team.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>

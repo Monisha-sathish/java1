@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(45deg, #0a0a0a, #1a1a1a);
+            color: #fff;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .hero {
+            height: 250px;
+            background: linear-gradient(90deg, #4433ff, #00ffbb);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to top, #0a0a0a, transparent);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: -150px auto 50px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 30px;
+        }
+
+        .contact-header {
+            grid-column: span 12;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #4433ff, #00ffbb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .coding-profiles {
+            grid-column: span 12;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .profile-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .profile-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #4433ff22, #00ffbb22);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-5px);
+            border-color: #4433ff;
+        }
+
+        .profile-card:hover::before {
+            opacity: 1;
+        }
+
+        .profile-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #4433ff, #00ffbb);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8em;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-info {
+            flex: 1;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-name {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .profile-stats {
+            font-size: 0.9em;
+            color: #888;
+        }
+
+        .contact-form-section {
+            grid-column: span 7;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-info-section {
+            grid-column: span 5;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: #fff;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #4433ff;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .form-label {
+            position: absolute;
+            left: 20px;
+            top: -10px;
+            background: #1a1a1a;
+            padding: 0 10px;
+            color: #888;
+            font-size: 0.9em;
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(45deg, #4433ff, #00ffbb);
+            border: none;
+            border-radius: 12px;
+            color: #fff;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(68, 51, 255, 0.3);
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateX(5px);
+        }
+
+        .contact-info-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #4433ff, #00ffbb);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 1.5em;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.5em;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: linear-gradient(45deg, #4433ff, #00ffbb);
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 992px) {
+            .contact-form-section,
+            .contact-info-section {
+                grid-column: span 12;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero"></div>
+    <div class="container">
+        <div class="contact-grid">
+            <div class="contact-header">
+                <h1 class="section-title">Let's Connect</h1>
+                <p>Feel free to reach out through any of these platforms</p>
+            </div>
+
+            <div class="coding-profiles">
+                <a href="https://leetcode.com/progress/" target="_blank" class="profile-card">
+                    <div class="profile-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="profile-info">
+                        <div class="profile-name">LeetCode</div>
+                        <div class="profile-stats">
+                            100+ Problems Solved
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.hackerrank.com/profile/monishas2212" target="_blank" class="profile-card">
+                    <div class="profile-icon">
+                        <i class="fab fa-hackerrank"></i>
+                    </div>
+                    <div class="profile-info">
+                        <div class="profile-name">HackerRank</div>
+                        <div class="profile-stats">
+                            5⭐ Java
+                        </div>
+                        <div class="profile-stats">
+                            4⭐ SQL
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://github.com/Monisha-sathish" target="_blank" class="profile-card">
+                    <div class="profile-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="profile-info">
+                        <div class="profile-name">GitHub</div>
+                        <div class="profile-stats">
+                            6+ Repositories
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.interviewbit.com/profile/monisha-s_509/" target="_blank" class="profile-card">
+                    <div class="profile-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="profile-info">
+                        <div class="profile-name">InterviewBit</div>
+                        <div class="profile-stats">
+                            40+ Problems Solved
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="contact-form-section">
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" required>
+                        <label class="form-label">Your Name</label>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" class="form-control" required>
+                        <label class="form-label">Your Email</label>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" required>
+                        <label class="form-label">Subject</label>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea class="form-control" required></textarea>
+                        <label class="form-label">Your Message</label>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+
+            <div class="contact-info-section">
+                <div class="contact-info-item">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h3>Email</h3>
+                        <p>monishas2212@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="contact-info-item">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div>
+                        <h3>Phone</h3>
+                        <p>+91 8148111511</p>
+                    </div>
+                </div>
+
+                <div class="contact-info-item">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <h3>Coimbatore</h3>
+                        <p>Kpr Institute of Engineering and Technologies</p>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/monishas2212/" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://twitter.com/monishas2212" target="_blank" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com/monishas2212/" target="_blank" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://discord.gg/monishas2212" target="_blank" class="social-link">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

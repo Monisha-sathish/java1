@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Certifications</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1a1c20 0%, #0f1215 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            color: #fff;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .header h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            border-radius: 2px;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .cert-category {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cert-category:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            gap: 15px;
+        }
+
+        .category-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+        }
+
+        .category-title {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .cert-list {
+            list-style: none;
+        }
+
+        .cert-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .cert-item:hover {
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateX(5px);
+        }
+
+        .cert-name {
+            font-weight: 600;
+            color: #00c6ff;
+            margin-bottom: 8px;
+        }
+
+        .cert-description {
+            color: #a0a0a0;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+
+        .cert-meta {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 10px;
+            font-size: 0.85em;
+            color: #888;
+        }
+
+        .cert-meta i {
+            color: #00c6ff;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2em;
+            }
+
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cert-category {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Professional Certifications</h1>
+        </div>
+
+        <div class="cert-grid">
+            <!-- Online Courses Section -->
+            <div class="cert-category">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="category-title">Online Courses</div>
+                </div>
+                <ul class="cert-list">
+                    <li class="cert-item">
+                        <div class="cert-name">Python Programming</div>
+                        <div class="cert-description">Programming for Everybody - Comprehensive introduction to Python programming fundamentals</div>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-award"></i> Coursera</span>
+                            <span><i class="fas fa-calendar"></i> 2023</span>
+                        </div>
+                    </li>
+                    <li class="cert-item">
+                        <div class="cert-name">Data Visualization</div>
+                        <div class="cert-description">Advanced techniques in data visualization using Python libraries</div>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-award"></i> Coursera</span>
+                            <span><i class="fas fa-calendar"></i> 2023</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- HackerRank Section -->
+            <div class="cert-category">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="category-title">HackerRank Certifications</div>
+                </div>
+                <ul class="cert-list">
+                    <li class="cert-item">
+                        <div class="cert-name">Problem Solving (Basic)</div>
+                        <div class="cert-description">Demonstrated proficiency in basic algorithmic and problem-solving skills</div>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-star"></i> HackerRank</span>
+                            <span><i class="fas fa-calendar"></i> 2023</span>
+                        </div>
+                    </li>
+                    <li class="cert-item">
+                        <div class="cert-name">Java (Basic)</div>
+                        <div class="cert-description">Verified skills in basic java concepts including data structures and algorithms</div>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-star"></i> HackerRank</span>
+                        </div>
+                    </li>
+                    <li class="cert-item">
+                        <div class="cert-name">SQL (Basic)</div>
+                        <div class="cert-description">Demonstrated knowledge of fundamental SQL queries and database operations</div>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-star"></i> HackerRank</span>
+                            <span><i class="fas fa-calendar"></i> 2025</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Internships Section -->
+            <div class="cert-category">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="category-title">In-plant training</div>
+                </div>
+                <ul class="cert-list">
+                    <li class="cert-item">
+                        <div class="cert-name">TECHVOLT SOFTWARE</div>
+                        <div class="cert-description">Focus: HTML, CSS development training, and project contributions</div>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-building"></i> Corporate</span>
+                            <span><i class="fas fa-calendar"></i> 2024</span>
+                        </div>
+                    </li>
+                    <li class="cert-item">
+                        <div class="cert-name">TECHNOHACKS</div>
+                        <div class="cert-description"> Focus: AI \& ML training, including hands-on project development</div>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-building"></i> Corporate</span>
+                            <span><i class="fas fa-calendar"></i> 2024</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- NPTEL Section -->
+            <div class="cert-category">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="category-title">NPTEL Certifications</div>
+                </div>
+                <ul class="cert-list">
+                    <li class="cert-item">
+                        <div class="cert-name">C Programming</div>
+                        <div class="cert-description">Problem-solving through C programming</div>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-certificate"></i> NPTEL</span>
+                        </div>
+                    </li>
+                    <li class="cert-item">
+                        <div class="cert-name">Cybersecurity</div>
+                        <div class="cert-description">Practical cybersecurity for cybersecurity practitioners</div>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-certificate"></i> NPTEL</span>
+                            <span><i class="fas fa-shield-alt"></i> Elite</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Sports Certifications Section -->
+            <div class="cert-category">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <div class="category-title">Sports Certifications</div>
+                </div>
+                <ul class="cert-list">
+                    <li class="cert-item">
+                        <div class="cert-name">Triple Jump/div>
+                        <div class="cert-description">The triple jump is a track and field event that involves three consecutive phases: the hop, step, and jump. It is sometimes referred to as the "hop, skip, and jump." The goal is to cover the maximum possible distance from the takeoff board to the landing in the sandpit.</div>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-medal"></i>Anna University Zone Winner</span>
+                            <span><i class="fas fa-calendar"></i> 2022</span>
+                        </div>
+                    </li>
+                    <li class="cert-item">
+                        <div class="cert-name">Athletic Achievement</div>
+                        <div class="cert-description">Recognition for excellence in university track and field competitions</div>
+                        <div class="cert-meta">
+                            <span><i class="fas fa-trophy"></i> University Athletics</span>
+                            <span><i class="fas fa-calendar"></i> 2022</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
